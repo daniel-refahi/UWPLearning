@@ -1,0 +1,1 @@
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\Prototype.csproj;x86
