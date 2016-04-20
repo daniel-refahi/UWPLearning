@@ -132,15 +132,21 @@ namespace LearningUWP.Prototype_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
-            _typeNameTable[0] = "LearningUWP.MainPage";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable = new string[6];
+            _typeNameTable[0] = "LearningUWP.Models.MainPageModel";
+            _typeNameTable[1] = "Object";
+            _typeNameTable[2] = "String";
+            _typeNameTable[3] = "LearningUWP.MainPage";
+            _typeNameTable[4] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[5] = "Windows.UI.Xaml.Controls.UserControl";
 
-            _typeTable = new global::System.Type[3];
-            _typeTable[0] = typeof(global::LearningUWP.MainPage);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable = new global::System.Type[6];
+            _typeTable[0] = typeof(global::LearningUWP.Models.MainPageModel);
+            _typeTable[1] = typeof(global::System.Object);
+            _typeTable[2] = typeof(global::System.String);
+            _typeTable[3] = typeof(global::LearningUWP.MainPage);
+            _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -175,7 +181,8 @@ namespace LearningUWP.Prototype_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPage() { return new global::LearningUWP.MainPage(); }
+        private object Activate_0_MainPageModel() { return new global::LearningUWP.Models.MainPageModel(); }
+        private object Activate_3_MainPage() { return new global::LearningUWP.MainPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -187,18 +194,34 @@ namespace LearningUWP.Prototype_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  LearningUWP.MainPage
-                userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_MainPage;
+            case 0:   //  LearningUWP.Models.MainPageModel
+                userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_0_MainPageModel;
+                userType.AddMemberName("SelectedName");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.Page
+            case 1:   //  Object
                 xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Windows.UI.Xaml.Controls.UserControl
+            case 2:   //  String
+                xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  LearningUWP.MainPage
+                userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_3_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 5:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -206,11 +229,31 @@ namespace LearningUWP.Prototype_XamlTypeInfo
         }
 
 
+        private object get_0_MainPageModel_SelectedName(object instance)
+        {
+            var that = (global::LearningUWP.Models.MainPageModel)instance;
+            return that.SelectedName;
+        }
+        private void set_0_MainPageModel_SelectedName(object instance, object Value)
+        {
+            var that = (global::LearningUWP.Models.MainPageModel)instance;
+            that.SelectedName = (global::System.String)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::LearningUWP.Prototype_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "LearningUWP.Models.MainPageModel.SelectedName":
+                userType = (global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LearningUWP.Models.MainPageModel");
+                xamlMember = new global::LearningUWP.Prototype_XamlTypeInfo.XamlMember(this, "SelectedName", "String");
+                xamlMember.Getter = get_0_MainPageModel_SelectedName;
+                xamlMember.Setter = set_0_MainPageModel_SelectedName;
+                break;
+            }
             return xamlMember;
         }
     }
