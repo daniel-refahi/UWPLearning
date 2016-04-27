@@ -7,6 +7,23 @@
     xmlns:Models="using:LearningUWP.Models"
     x:Class="LearningUWP.MainPage"
     mc:Ignorable="d" RequestedTheme="Dark">
+    <Page.Resources>
+        <DataTemplate x:Key="CompanyTemplate">
+            <Grid Height="60" Margin="10" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                    <TextBlock Text="{Binding Name}" Style="{StaticResource TitleTextBlockStyle}"/>
+                    <TextBlock Text="{Binding Location}" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="NoWrap" FontSize="14.667"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Page.DataContext>
+        <Models:MainPageModel/>
+    </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
@@ -18,15 +35,13 @@
                 <RowDefinition Height="100"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <ListView x:ConnectionId='1' x:Name="listView" ItemTemplate="{StaticResource CompanyTemplate}" ItemsSource="{Binding Companies}" Grid.Row="1"/>
         </Grid>
         <Grid Grid.Column="1" RequestedTheme="Dark">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Grid.DataContext>
-                <Models:MainPageModel/>
-            </Grid.DataContext>
             <TextBlock Text="{Binding SelectedName}" Padding="3,3,3,3" Margin="10,10,0,10" HorizontalAlignment="Left" Width="216" d:LayoutOverrides="TopPosition, BottomPosition" FontSize="24"/>
         </Grid>
 
