@@ -35,14 +35,18 @@
                 <RowDefinition Height="100"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <ListView x:ConnectionId='1' x:Name="listView" ItemTemplate="{StaticResource CompanyTemplate}" ItemsSource="{Binding Companies}" Grid.Row="1"/>
+            <ListView x:ConnectionId='1' x:Name="listView" ItemTemplate="{StaticResource CompanyTemplate}" 
+                      ItemsSource="{Binding FilteredCompanies}" Grid.Row="1" 
+                      SelectedItem="{Binding SelectedCompany, Mode=TwoWay}"/>
+            <TextBox x:ConnectionId='2' x:Name="textBox" TextWrapping="Wrap" Text="{Binding FilterCriteria, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Search for Company" Margin="20,32" FontSize="16"/>
         </Grid>
         <Grid Grid.Column="1" RequestedTheme="Dark">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Text="{Binding SelectedName}" Padding="3,3,3,3" Margin="10,10,0,10" HorizontalAlignment="Left" Width="216" d:LayoutOverrides="TopPosition, BottomPosition" FontSize="24"/>
+            <TextBlock Padding="3,3,3,3" Margin="10,10,0,10" HorizontalAlignment="Left" d:LayoutOverrides="TopPosition, BottomPosition" 
+                       FontSize="24" Text="{Binding EmployeeListTitle}"/>
         </Grid>
 
     </Grid>
