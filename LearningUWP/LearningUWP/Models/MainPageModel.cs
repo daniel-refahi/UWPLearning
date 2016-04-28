@@ -12,15 +12,21 @@ namespace LearningUWP.Models
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public List<Company> Companies { get; set; }        
+        public List<Company> Companies { get; set; }
+        public ObservableCollection<Employee> Employees { get; set; } = new ObservableCollection<Employee>();
 
         public MainPageModel()
         {
-            Companies = Repository.GetCompanies();
-            FilteredCompanies = new ObservableCollection<Company>(Companies);
+            GetAllData();
         }
 
-        public ObservableCollection<Company> FilteredCompanies { get; set; }        
+        private async void GetAllData()
+        {
+            Companies = await Repository.GetCompaniesAsync();
+            PerformCompanyFiltering();
+        }
+
+        public ObservableCollection<Company> FilteredCompanies { get; set; } = new ObservableCollection<Company>();      
 
         private void PerformCompanyFiltering()
         {
@@ -75,6 +81,11 @@ namespace LearningUWP.Models
             {
                 _SelectedCompany = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(EmployeeListTitle)));
+                Employees.Clear();
+                foreach (var e in _SelectedCompany.Employees)
+                {
+                    Employees.Add(e);
+                }
             }
         }
 

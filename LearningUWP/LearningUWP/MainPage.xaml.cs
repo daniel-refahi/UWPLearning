@@ -1,10 +1,12 @@
-﻿using System;
+﻿using LearningUWP.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +27,12 @@ namespace LearningUWP
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private async void DetailBt_Click(object sender, RoutedEventArgs e)
+        {
+            Employee employee = ((FrameworkElement)sender).DataContext as Employee;
+            await new MessageDialog(string.Format("Your name is {0}",employee.Name)).ShowAsync();
         }
     }
 }
