@@ -194,3 +194,8 @@ C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x
 C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\About.xbf
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\About.g.i.cs
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\About.g.cs
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\About.xaml
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\About.xbf

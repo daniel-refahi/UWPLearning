@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-05T04:26:31.438</Modified>
+      <Modified>2016-05-05T05:01:26.349</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\LearningUWP.exe">
       <PackagePath>entrypoint\LearningUWP.exe</PackagePath>
-      <Modified>2016-05-05T04:26:30.509</Modified>
+      <Modified>2016-05-05T05:01:25.953</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DanielRefahi\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -498,7 +498,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\LearningUWP.xr.xml">
       <PackagePath>LearningUWP.xr.xml</PackagePath>
-      <Modified>2016-05-05T04:26:30.222</Modified>
+      <Modified>2016-05-05T04:59:49.082</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -506,11 +506,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-05-05T04:26:31.174</Modified>
+      <Modified>2016-05-05T04:59:50.093</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\Core\LearningUWP.exe">
       <PackagePath>LearningUWP.exe</PackagePath>
-      <Modified>2016-05-05T04:26:31.429</Modified>
+      <Modified>2016-05-05T05:01:26.333</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

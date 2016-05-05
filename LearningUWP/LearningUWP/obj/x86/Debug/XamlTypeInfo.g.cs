@@ -132,43 +132,45 @@ namespace LearningUWP.Prototype_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[17];
-            _typeNameTable[0] = "LearningUWP.Models.MainPageModel";
-            _typeNameTable[1] = "Object";
-            _typeNameTable[2] = "System.Collections.Generic.List`1<LearningUWP.Models.Company>";
-            _typeNameTable[3] = "LearningUWP.Models.Company";
-            _typeNameTable[4] = "String";
-            _typeNameTable[5] = "System.Collections.Generic.List`1<LearningUWP.Models.Employee>";
-            _typeNameTable[6] = "LearningUWP.Models.Employee";
-            _typeNameTable[7] = "Int32";
-            _typeNameTable[8] = "System.Collections.ObjectModel.ObservableCollection`1<LearningUWP.Models.Employee>";
-            _typeNameTable[9] = "System.Collections.ObjectModel.Collection`1<LearningUWP.Models.Employee>";
-            _typeNameTable[10] = "System.Collections.ObjectModel.ObservableCollection`1<LearningUWP.Models.Company>";
-            _typeNameTable[11] = "System.Collections.ObjectModel.Collection`1<LearningUWP.Models.Company>";
-            _typeNameTable[12] = "LearningUWP.AppBarCommands.SendEmailCommand";
-            _typeNameTable[13] = "Boolean";
-            _typeNameTable[14] = "LearningUWP.MainPage";
-            _typeNameTable[15] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[16] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable = new string[18];
+            _typeNameTable[0] = "LearningUWP.About";
+            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[3] = "LearningUWP.Models.MainPageModel";
+            _typeNameTable[4] = "Object";
+            _typeNameTable[5] = "System.Collections.Generic.List`1<LearningUWP.Models.Company>";
+            _typeNameTable[6] = "LearningUWP.Models.Company";
+            _typeNameTable[7] = "String";
+            _typeNameTable[8] = "System.Collections.Generic.List`1<LearningUWP.Models.Employee>";
+            _typeNameTable[9] = "LearningUWP.Models.Employee";
+            _typeNameTable[10] = "Int32";
+            _typeNameTable[11] = "System.Collections.ObjectModel.ObservableCollection`1<LearningUWP.Models.Employee>";
+            _typeNameTable[12] = "System.Collections.ObjectModel.Collection`1<LearningUWP.Models.Employee>";
+            _typeNameTable[13] = "System.Collections.ObjectModel.ObservableCollection`1<LearningUWP.Models.Company>";
+            _typeNameTable[14] = "System.Collections.ObjectModel.Collection`1<LearningUWP.Models.Company>";
+            _typeNameTable[15] = "LearningUWP.AppBarCommands.SendEmailCommand";
+            _typeNameTable[16] = "Boolean";
+            _typeNameTable[17] = "LearningUWP.MainPage";
 
-            _typeTable = new global::System.Type[17];
-            _typeTable[0] = typeof(global::LearningUWP.Models.MainPageModel);
-            _typeTable[1] = typeof(global::System.Object);
-            _typeTable[2] = typeof(global::System.Collections.Generic.List<global::LearningUWP.Models.Company>);
-            _typeTable[3] = typeof(global::LearningUWP.Models.Company);
-            _typeTable[4] = typeof(global::System.String);
-            _typeTable[5] = typeof(global::System.Collections.Generic.List<global::LearningUWP.Models.Employee>);
-            _typeTable[6] = typeof(global::LearningUWP.Models.Employee);
-            _typeTable[7] = typeof(global::System.Int32);
-            _typeTable[8] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::LearningUWP.Models.Employee>);
-            _typeTable[9] = typeof(global::System.Collections.ObjectModel.Collection<global::LearningUWP.Models.Employee>);
-            _typeTable[10] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::LearningUWP.Models.Company>);
-            _typeTable[11] = typeof(global::System.Collections.ObjectModel.Collection<global::LearningUWP.Models.Company>);
-            _typeTable[12] = typeof(global::LearningUWP.AppBarCommands.SendEmailCommand);
-            _typeTable[13] = typeof(global::System.Boolean);
-            _typeTable[14] = typeof(global::LearningUWP.MainPage);
-            _typeTable[15] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[16] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable = new global::System.Type[18];
+            _typeTable[0] = typeof(global::LearningUWP.About);
+            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[3] = typeof(global::LearningUWP.Models.MainPageModel);
+            _typeTable[4] = typeof(global::System.Object);
+            _typeTable[5] = typeof(global::System.Collections.Generic.List<global::LearningUWP.Models.Company>);
+            _typeTable[6] = typeof(global::LearningUWP.Models.Company);
+            _typeTable[7] = typeof(global::System.String);
+            _typeTable[8] = typeof(global::System.Collections.Generic.List<global::LearningUWP.Models.Employee>);
+            _typeTable[9] = typeof(global::LearningUWP.Models.Employee);
+            _typeTable[10] = typeof(global::System.Int32);
+            _typeTable[11] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::LearningUWP.Models.Employee>);
+            _typeTable[12] = typeof(global::System.Collections.ObjectModel.Collection<global::LearningUWP.Models.Employee>);
+            _typeTable[13] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::LearningUWP.Models.Company>);
+            _typeTable[14] = typeof(global::System.Collections.ObjectModel.Collection<global::LearningUWP.Models.Company>);
+            _typeTable[15] = typeof(global::LearningUWP.AppBarCommands.SendEmailCommand);
+            _typeTable[16] = typeof(global::System.Boolean);
+            _typeTable[17] = typeof(global::LearningUWP.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -203,47 +205,48 @@ namespace LearningUWP.Prototype_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPageModel() { return new global::LearningUWP.Models.MainPageModel(); }
-        private object Activate_2_List() { return new global::System.Collections.Generic.List<global::LearningUWP.Models.Company>(); }
-        private object Activate_3_Company() { return new global::LearningUWP.Models.Company(); }
-        private object Activate_5_List() { return new global::System.Collections.Generic.List<global::LearningUWP.Models.Employee>(); }
-        private object Activate_6_Employee() { return new global::LearningUWP.Models.Employee(); }
-        private object Activate_8_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::LearningUWP.Models.Employee>(); }
-        private object Activate_9_Collection() { return new global::System.Collections.ObjectModel.Collection<global::LearningUWP.Models.Employee>(); }
-        private object Activate_10_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::LearningUWP.Models.Company>(); }
-        private object Activate_11_Collection() { return new global::System.Collections.ObjectModel.Collection<global::LearningUWP.Models.Company>(); }
-        private object Activate_14_MainPage() { return new global::LearningUWP.MainPage(); }
-        private void VectorAdd_2_List(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::LearningUWP.Models.Company>)instance;
-            var newItem = (global::LearningUWP.Models.Company)item;
-            collection.Add(newItem);
-        }
+        private object Activate_0_About() { return new global::LearningUWP.About(); }
+        private object Activate_3_MainPageModel() { return new global::LearningUWP.Models.MainPageModel(); }
+        private object Activate_5_List() { return new global::System.Collections.Generic.List<global::LearningUWP.Models.Company>(); }
+        private object Activate_6_Company() { return new global::LearningUWP.Models.Company(); }
+        private object Activate_8_List() { return new global::System.Collections.Generic.List<global::LearningUWP.Models.Employee>(); }
+        private object Activate_9_Employee() { return new global::LearningUWP.Models.Employee(); }
+        private object Activate_11_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::LearningUWP.Models.Employee>(); }
+        private object Activate_12_Collection() { return new global::System.Collections.ObjectModel.Collection<global::LearningUWP.Models.Employee>(); }
+        private object Activate_13_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::LearningUWP.Models.Company>(); }
+        private object Activate_14_Collection() { return new global::System.Collections.ObjectModel.Collection<global::LearningUWP.Models.Company>(); }
+        private object Activate_17_MainPage() { return new global::LearningUWP.MainPage(); }
         private void VectorAdd_5_List(object instance, object item)
         {
-            var collection = (global::System.Collections.Generic.ICollection<global::LearningUWP.Models.Employee>)instance;
-            var newItem = (global::LearningUWP.Models.Employee)item;
+            var collection = (global::System.Collections.Generic.ICollection<global::LearningUWP.Models.Company>)instance;
+            var newItem = (global::LearningUWP.Models.Company)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_8_ObservableCollection(object instance, object item)
+        private void VectorAdd_8_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::LearningUWP.Models.Employee>)instance;
             var newItem = (global::LearningUWP.Models.Employee)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_9_Collection(object instance, object item)
+        private void VectorAdd_11_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::LearningUWP.Models.Employee>)instance;
             var newItem = (global::LearningUWP.Models.Employee)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_10_ObservableCollection(object instance, object item)
+        private void VectorAdd_12_Collection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::LearningUWP.Models.Employee>)instance;
+            var newItem = (global::LearningUWP.Models.Employee)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_13_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::LearningUWP.Models.Company>)instance;
             var newItem = (global::LearningUWP.Models.Company)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_11_Collection(object instance, object item)
+        private void VectorAdd_14_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::LearningUWP.Models.Company>)instance;
             var newItem = (global::LearningUWP.Models.Company)item;
@@ -260,9 +263,24 @@ namespace LearningUWP.Prototype_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  LearningUWP.Models.MainPageModel
+            case 0:   //  LearningUWP.About
+                userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_0_About;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 1:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 2:   //  Windows.UI.Xaml.Controls.UserControl
+                xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  LearningUWP.Models.MainPageModel
                 userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_0_MainPageModel;
+                userType.Activator = Activate_3_MainPageModel;
                 userType.AddMemberName("Companies");
                 userType.AddMemberName("Employees");
                 userType.AddMemberName("FilteredCompanies");
@@ -275,20 +293,20 @@ namespace LearningUWP.Prototype_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 1:   //  Object
+            case 4:   //  Object
                 xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  System.Collections.Generic.List`1<LearningUWP.Models.Company>
+            case 5:   //  System.Collections.Generic.List`1<LearningUWP.Models.Company>
                 userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_2_List;
+                userType.CollectionAdd = VectorAdd_5_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 3:   //  LearningUWP.Models.Company
+            case 6:   //  LearningUWP.Models.Company
                 userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_3_Company;
+                userType.Activator = Activate_6_Company;
                 userType.AddMemberName("Name");
                 userType.AddMemberName("Location");
                 userType.AddMemberName("Employees");
@@ -296,20 +314,20 @@ namespace LearningUWP.Prototype_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 4:   //  String
+            case 7:   //  String
                 xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  System.Collections.Generic.List`1<LearningUWP.Models.Employee>
+            case 8:   //  System.Collections.Generic.List`1<LearningUWP.Models.Employee>
                 userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_5_List;
+                userType.CollectionAdd = VectorAdd_8_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 6:   //  LearningUWP.Models.Employee
+            case 9:   //  LearningUWP.Models.Employee
                 userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_6_Employee;
+                userType.Activator = Activate_9_Employee;
                 userType.AddMemberName("Name");
                 userType.AddMemberName("Age");
                 userType.AddMemberName("Position");
@@ -317,62 +335,54 @@ namespace LearningUWP.Prototype_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 7:   //  Int32
+            case 10:   //  Int32
                 xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 8:   //  System.Collections.ObjectModel.ObservableCollection`1<LearningUWP.Models.Employee>
+            case 11:   //  System.Collections.ObjectModel.ObservableCollection`1<LearningUWP.Models.Employee>
                 userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<LearningUWP.Models.Employee>"));
-                userType.CollectionAdd = VectorAdd_8_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_11_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 9:   //  System.Collections.ObjectModel.Collection`1<LearningUWP.Models.Employee>
+            case 12:   //  System.Collections.ObjectModel.Collection`1<LearningUWP.Models.Employee>
                 userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_9_Collection;
-                userType.CollectionAdd = VectorAdd_9_Collection;
+                userType.Activator = Activate_12_Collection;
+                userType.CollectionAdd = VectorAdd_12_Collection;
                 xamlType = userType;
                 break;
 
-            case 10:   //  System.Collections.ObjectModel.ObservableCollection`1<LearningUWP.Models.Company>
+            case 13:   //  System.Collections.ObjectModel.ObservableCollection`1<LearningUWP.Models.Company>
                 userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<LearningUWP.Models.Company>"));
-                userType.CollectionAdd = VectorAdd_10_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_13_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 11:   //  System.Collections.ObjectModel.Collection`1<LearningUWP.Models.Company>
+            case 14:   //  System.Collections.ObjectModel.Collection`1<LearningUWP.Models.Company>
                 userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_11_Collection;
-                userType.CollectionAdd = VectorAdd_11_Collection;
+                userType.Activator = Activate_14_Collection;
+                userType.CollectionAdd = VectorAdd_14_Collection;
                 xamlType = userType;
                 break;
 
-            case 12:   //  LearningUWP.AppBarCommands.SendEmailCommand
+            case 15:   //  LearningUWP.AppBarCommands.SendEmailCommand
                 userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 13:   //  Boolean
+            case 16:   //  Boolean
                 xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 14:   //  LearningUWP.MainPage
+            case 17:   //  LearningUWP.MainPage
                 userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_14_MainPage;
+                userType.Activator = Activate_17_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
-                break;
-
-            case 15:   //  Windows.UI.Xaml.Controls.Page
-                xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 16:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
             return xamlType;

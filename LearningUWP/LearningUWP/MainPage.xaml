@@ -45,6 +45,7 @@
             <CommandBar.SecondaryCommands>
                 <AppBarToggleButton x:Name="LiveTileToggleBt" Label="Live Tile" IsChecked="{Binding LiveTileEnabled, Mode=TwoWay}"/>
             </CommandBar.SecondaryCommands>
+            <AppBarButton x:Name="aboutPageBt" HorizontalAlignment="Stretch" Icon="Admin" Label="Go to About" VerticalAlignment="Stretch" d:LayoutOverrides="Height" Click="aboutPageBt_Click"/>
             <AppBarButton Icon="Mail" Label="Send email to company" Command="{Binding SendEmailCommand, Mode=OneWay}" />
         </CommandBar>
     </Page.BottomAppBar>
