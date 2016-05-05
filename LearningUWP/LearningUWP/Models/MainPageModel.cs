@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LearningUWP.AppBarCommands;
+using LearningUWP.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -17,6 +19,7 @@ namespace LearningUWP.Models
 
         public MainPageModel()
         {
+            SendEmailCommand = new SendEmailCommand(this);
             GetAllData();
         }
 
@@ -69,7 +72,6 @@ namespace LearningUWP.Models
             set { _EmployeeListTitle = value; }
         }
 
-
         private Company _SelectedCompany;
         public Company SelectedCompany
         {
@@ -80,14 +82,33 @@ namespace LearningUWP.Models
             set
             {
                 _SelectedCompany = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(EmployeeListTitle)));
-                Employees.Clear();
-                foreach (var e in _SelectedCompany.Employees)
+                if (_SelectedCompany != null)
                 {
-                    Employees.Add(e);
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(EmployeeListTitle)));
+                    Employees.Clear();
+                    foreach (var e in _SelectedCompany.Employees)
+                    {
+                        Employees.Add(e);
+                    }
                 }
+                SendEmailCommand.FireCanExcuteChanged();
             }
         }
+
+        #region app bar
+        public SendEmailCommand SendEmailCommand { get; }
+        public bool LiveTileEnabled
+        {
+            get
+            {
+                return Settings.LiveTileEnabled;
+            }
+            set
+            {
+                Settings.LiveTileEnabled = value;
+            }
+        }
+        #endregion
 
     }
 }

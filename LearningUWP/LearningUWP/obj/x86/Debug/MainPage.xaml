@@ -40,6 +40,14 @@
             </Grid>
         </DataTemplate>
     </Page.Resources>
+    <Page.BottomAppBar>
+        <CommandBar >
+            <CommandBar.SecondaryCommands>
+                <AppBarToggleButton x:ConnectionId='2' x:Name="LiveTileToggleBt" Label="Live Tile" IsChecked="{Binding LiveTileEnabled, Mode=TwoWay}"/>
+            </CommandBar.SecondaryCommands>
+            <AppBarButton Icon="Mail" Label="Send email to company" Command="{Binding SendEmailCommand, Mode=OneWay}" />
+        </CommandBar>
+    </Page.BottomAppBar>
     <Page.DataContext>
         <Models:MainPageModel/>
     </Page.DataContext>
@@ -54,10 +62,10 @@
                 <RowDefinition Height="100"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <ListView x:ConnectionId='2' x:Name="listView" ItemTemplate="{StaticResource CompanyTemplate}" 
+            <ListView x:ConnectionId='3' x:Name="listView" ItemTemplate="{StaticResource CompanyTemplate}" 
                       ItemsSource="{Binding FilteredCompanies}" Grid.Row="1" 
                       SelectedItem="{Binding SelectedCompany, Mode=TwoWay}" SelectedIndex="-1"/>
-            <TextBox x:ConnectionId='3' x:Name="textBox" TextWrapping="Wrap" Text="{Binding FilterCriteria, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Search for Company" Margin="20,32" FontSize="16"/>
+            <TextBox x:ConnectionId='4' x:Name="textBox" TextWrapping="Wrap" Text="{Binding FilterCriteria, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Search for Company" Margin="20,32" FontSize="16"/>
         </Grid>
         <Grid Grid.Column="1" RequestedTheme="Dark">
             <Grid.RowDefinitions>

@@ -40,6 +40,14 @@
             </Grid>
         </DataTemplate>
     </Page.Resources>
+    <Page.BottomAppBar>
+        <CommandBar >
+            <CommandBar.SecondaryCommands>
+                <AppBarToggleButton x:Name="LiveTileToggleBt" Label="Live Tile" IsChecked="{Binding LiveTileEnabled, Mode=TwoWay}"/>
+            </CommandBar.SecondaryCommands>
+            <AppBarButton Icon="Mail" Label="Send email to company" Command="{Binding SendEmailCommand, Mode=OneWay}" />
+        </CommandBar>
+    </Page.BottomAppBar>
     <Page.DataContext>
         <Models:MainPageModel/>
     </Page.DataContext>

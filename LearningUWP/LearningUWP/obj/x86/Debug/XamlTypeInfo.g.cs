@@ -132,7 +132,7 @@ namespace LearningUWP.Prototype_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[15];
+            _typeNameTable = new string[17];
             _typeNameTable[0] = "LearningUWP.Models.MainPageModel";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "System.Collections.Generic.List`1<LearningUWP.Models.Company>";
@@ -145,11 +145,13 @@ namespace LearningUWP.Prototype_XamlTypeInfo
             _typeNameTable[9] = "System.Collections.ObjectModel.Collection`1<LearningUWP.Models.Employee>";
             _typeNameTable[10] = "System.Collections.ObjectModel.ObservableCollection`1<LearningUWP.Models.Company>";
             _typeNameTable[11] = "System.Collections.ObjectModel.Collection`1<LearningUWP.Models.Company>";
-            _typeNameTable[12] = "LearningUWP.MainPage";
-            _typeNameTable[13] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[14] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[12] = "LearningUWP.AppBarCommands.SendEmailCommand";
+            _typeNameTable[13] = "Boolean";
+            _typeNameTable[14] = "LearningUWP.MainPage";
+            _typeNameTable[15] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[16] = "Windows.UI.Xaml.Controls.UserControl";
 
-            _typeTable = new global::System.Type[15];
+            _typeTable = new global::System.Type[17];
             _typeTable[0] = typeof(global::LearningUWP.Models.MainPageModel);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::System.Collections.Generic.List<global::LearningUWP.Models.Company>);
@@ -162,9 +164,11 @@ namespace LearningUWP.Prototype_XamlTypeInfo
             _typeTable[9] = typeof(global::System.Collections.ObjectModel.Collection<global::LearningUWP.Models.Employee>);
             _typeTable[10] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::LearningUWP.Models.Company>);
             _typeTable[11] = typeof(global::System.Collections.ObjectModel.Collection<global::LearningUWP.Models.Company>);
-            _typeTable[12] = typeof(global::LearningUWP.MainPage);
-            _typeTable[13] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[14] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[12] = typeof(global::LearningUWP.AppBarCommands.SendEmailCommand);
+            _typeTable[13] = typeof(global::System.Boolean);
+            _typeTable[14] = typeof(global::LearningUWP.MainPage);
+            _typeTable[15] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[16] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -208,7 +212,7 @@ namespace LearningUWP.Prototype_XamlTypeInfo
         private object Activate_9_Collection() { return new global::System.Collections.ObjectModel.Collection<global::LearningUWP.Models.Employee>(); }
         private object Activate_10_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::LearningUWP.Models.Company>(); }
         private object Activate_11_Collection() { return new global::System.Collections.ObjectModel.Collection<global::LearningUWP.Models.Company>(); }
-        private object Activate_12_MainPage() { return new global::LearningUWP.MainPage(); }
+        private object Activate_14_MainPage() { return new global::LearningUWP.MainPage(); }
         private void VectorAdd_2_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::LearningUWP.Models.Company>)instance;
@@ -265,6 +269,8 @@ namespace LearningUWP.Prototype_XamlTypeInfo
                 userType.AddMemberName("FilterCriteria");
                 userType.AddMemberName("EmployeeListTitle");
                 userType.AddMemberName("SelectedCompany");
+                userType.AddMemberName("SendEmailCommand");
+                userType.AddMemberName("LiveTileEnabled");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -343,18 +349,29 @@ namespace LearningUWP.Prototype_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 12:   //  LearningUWP.MainPage
-                userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_12_MainPage;
+            case 12:   //  LearningUWP.AppBarCommands.SendEmailCommand
+                userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 13:   //  Windows.UI.Xaml.Controls.Page
+            case 13:   //  Boolean
                 xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 14:   //  Windows.UI.Xaml.Controls.UserControl
+            case 14:   //  LearningUWP.MainPage
+                userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_14_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 15:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 16:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -482,6 +499,21 @@ namespace LearningUWP.Prototype_XamlTypeInfo
             var that = (global::LearningUWP.Models.MainPageModel)instance;
             that.SelectedCompany = (global::LearningUWP.Models.Company)Value;
         }
+        private object get_12_MainPageModel_SendEmailCommand(object instance)
+        {
+            var that = (global::LearningUWP.Models.MainPageModel)instance;
+            return that.SendEmailCommand;
+        }
+        private object get_13_MainPageModel_LiveTileEnabled(object instance)
+        {
+            var that = (global::LearningUWP.Models.MainPageModel)instance;
+            return that.LiveTileEnabled;
+        }
+        private void set_13_MainPageModel_LiveTileEnabled(object instance, object Value)
+        {
+            var that = (global::LearningUWP.Models.MainPageModel)instance;
+            that.LiveTileEnabled = (global::System.Boolean)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -561,6 +593,18 @@ namespace LearningUWP.Prototype_XamlTypeInfo
                 xamlMember = new global::LearningUWP.Prototype_XamlTypeInfo.XamlMember(this, "SelectedCompany", "LearningUWP.Models.Company");
                 xamlMember.Getter = get_11_MainPageModel_SelectedCompany;
                 xamlMember.Setter = set_11_MainPageModel_SelectedCompany;
+                break;
+            case "LearningUWP.Models.MainPageModel.SendEmailCommand":
+                userType = (global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LearningUWP.Models.MainPageModel");
+                xamlMember = new global::LearningUWP.Prototype_XamlTypeInfo.XamlMember(this, "SendEmailCommand", "LearningUWP.AppBarCommands.SendEmailCommand");
+                xamlMember.Getter = get_12_MainPageModel_SendEmailCommand;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "LearningUWP.Models.MainPageModel.LiveTileEnabled":
+                userType = (global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LearningUWP.Models.MainPageModel");
+                xamlMember = new global::LearningUWP.Prototype_XamlTypeInfo.XamlMember(this, "LiveTileEnabled", "Boolean");
+                xamlMember.Getter = get_13_MainPageModel_LiveTileEnabled;
+                xamlMember.Setter = set_13_MainPageModel_LiveTileEnabled;
                 break;
             }
             return xamlMember;
