@@ -1,1 +1,4 @@
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\BackgroundServices\BackgroundServices.csproj;x86
 C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\Prototype.csproj;x86
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\Repository\Repository.csproj;x86
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\Repository\Repository.csproj;x86

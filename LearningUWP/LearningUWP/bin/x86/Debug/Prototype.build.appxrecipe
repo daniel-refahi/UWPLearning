@@ -339,6 +339,12 @@
     <AppxPackagedFile Include="C:\Users\DanielRefahi\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\Repository\bin\x86\Debug\Repository.dll">
+      <PackagePath>Repository.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\BackgroundServices\bin\x86\Debug\BackgroundServices.winmd">
+      <PackagePath>BackgroundServices.winmd</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>

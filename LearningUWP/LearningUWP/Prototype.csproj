@@ -105,10 +105,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Company.cs" />
-    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\MainPageModel.cs" />
-    <Compile Include="Models\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Settings.cs" />
   </ItemGroup>
@@ -141,6 +138,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BackgroundServices\BackgroundServices.csproj">
+      <Project>{bc6ec9ea-cc4c-4fb5-a36a-8f98b45c8c39}</Project>
+      <Name>BackgroundServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{4e3d6ccd-a4b8-45ab-be24-383ce8e3d344}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

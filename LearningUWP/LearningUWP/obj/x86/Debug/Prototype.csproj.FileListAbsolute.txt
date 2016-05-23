@@ -199,3 +199,10 @@ C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x
 C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\About.g.cs
 C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\About.xaml
 C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\About.xbf
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\BackgroundServices.winmd
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\BackgroundServices.pdb
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\BackgroundServices.pri
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\Repository.dll
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\Repository.pdb
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\Repository.pri
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\Prototype.csproj.GenerateResource.Cache

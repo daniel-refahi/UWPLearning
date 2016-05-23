@@ -1,5 +1,6 @@
 ﻿using LearningUWP.AppBarCommands;
 using LearningUWP.Utilities;
+using Repository;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,7 +26,7 @@ namespace LearningUWP.Models
 
         private async void GetAllData()
         {
-            Companies = await Repository.GetCompaniesAsync();
+            Companies = await Queries.GetCompaniesAsync();
             PerformCompanyFiltering();
         }
 
