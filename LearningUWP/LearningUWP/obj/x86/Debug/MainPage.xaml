@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Models="using:LearningUWP.Models"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Behaviors="using:LearningUWP.Behaviors"
     x:Class="LearningUWP.MainPage"
     mc:Ignorable="d" RequestedTheme="Dark">
     <Page.Resources>
@@ -64,8 +65,12 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <ListView x:ConnectionId='4' x:Name="listView" ItemTemplate="{StaticResource CompanyTemplate}" 
-                      ItemsSource="{Binding FilteredCompanies}" Grid.Row="1" 
-                      SelectedItem="{Binding SelectedCompany, Mode=TwoWay}" SelectedIndex="-1"/>
+				ItemsSource="{Binding FilteredCompanies}" Grid.Row="1" 
+				SelectedItem="{Binding SelectedCompany, Mode=TwoWay}" SelectedIndex="-1">
+                <Interactivity:Interaction.Behaviors>
+                    <Behaviors:AutoScrolToSelectedItem_B/>
+                </Interactivity:Interaction.Behaviors>
+            </ListView>
             <TextBox x:ConnectionId='5' x:Name="textBox" TextWrapping="Wrap" Text="{Binding FilterCriteria, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Search for Company" Margin="20,32" FontSize="16"/>
         </Grid>
         <Grid Grid.Column="1" RequestedTheme="Dark">
@@ -74,7 +79,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Padding="3,3,3,3" Margin="10,10,0,10" HorizontalAlignment="Left" d:LayoutOverrides="TopPosition, BottomPosition" 
-                       FontSize="24" Text="{Binding EmployeeListTitle}"/>
+				FontSize="24" Text="{Binding EmployeeListTitle}"/>
             <ScrollViewer Grid.Row="1">
                 <ItemsControl ItemTemplate="{StaticResource EmployeeTemple}" ItemsSource="{Binding Employees}"/>
             </ScrollViewer>

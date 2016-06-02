@@ -50,6 +50,12 @@ namespace LearningUWP.Models
                     if (company.Name.Contains(_FilterCriteria)) FilteredCompanies.Add(company);
                 }
             }
+
+            try
+            {
+                SelectedCompany = FilteredCompanies[FilteredCompanies.Count - 2];
+            }
+            catch { }
         }
 
         private string _FilterCriteria;
@@ -83,6 +89,7 @@ namespace LearningUWP.Models
             set
             {
                 _SelectedCompany = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedCompany)));
                 if (_SelectedCompany != null)
                 {
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(EmployeeListTitle)));

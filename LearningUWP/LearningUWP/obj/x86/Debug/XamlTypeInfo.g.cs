@@ -132,7 +132,7 @@ namespace LearningUWP.Prototype_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[18];
+            _typeNameTable = new string[23];
             _typeNameTable[0] = "LearningUWP.About";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -150,9 +150,14 @@ namespace LearningUWP.Prototype_XamlTypeInfo
             _typeNameTable[14] = "System.Collections.ObjectModel.Collection`1<Repository.Company>";
             _typeNameTable[15] = "LearningUWP.AppBarCommands.SendEmailCommand";
             _typeNameTable[16] = "Boolean";
-            _typeNameTable[17] = "LearningUWP.MainPage";
+            _typeNameTable[17] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[18] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[19] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[20] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[21] = "LearningUWP.Behaviors.AutoScrolToSelectedItem_B";
+            _typeNameTable[22] = "LearningUWP.MainPage";
 
-            _typeTable = new global::System.Type[18];
+            _typeTable = new global::System.Type[23];
             _typeTable[0] = typeof(global::LearningUWP.About);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -170,7 +175,12 @@ namespace LearningUWP.Prototype_XamlTypeInfo
             _typeTable[14] = typeof(global::System.Collections.ObjectModel.Collection<global::Repository.Company>);
             _typeTable[15] = typeof(global::LearningUWP.AppBarCommands.SendEmailCommand);
             _typeTable[16] = typeof(global::System.Boolean);
-            _typeTable[17] = typeof(global::LearningUWP.MainPage);
+            _typeTable[17] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[18] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[19] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[20] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[21] = typeof(global::LearningUWP.Behaviors.AutoScrolToSelectedItem_B);
+            _typeTable[22] = typeof(global::LearningUWP.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -215,7 +225,9 @@ namespace LearningUWP.Prototype_XamlTypeInfo
         private object Activate_12_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Repository.Employee>(); }
         private object Activate_13_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Repository.Company>(); }
         private object Activate_14_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Repository.Company>(); }
-        private object Activate_17_MainPage() { return new global::LearningUWP.MainPage(); }
+        private object Activate_18_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_21_AutoScrolToSelectedItem_B() { return new global::LearningUWP.Behaviors.AutoScrolToSelectedItem_B(); }
+        private object Activate_22_MainPage() { return new global::LearningUWP.MainPage(); }
         private void VectorAdd_5_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Repository.Company>)instance;
@@ -250,6 +262,12 @@ namespace LearningUWP.Prototype_XamlTypeInfo
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Repository.Company>)instance;
             var newItem = (global::Repository.Company)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_18_BehaviorCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
+            var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
 
@@ -376,9 +394,38 @@ namespace LearningUWP.Prototype_XamlTypeInfo
                 xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 17:   //  LearningUWP.MainPage
+            case 17:   //  Microsoft.Xaml.Interactivity.Interaction
+                userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("Behaviors");
+                xamlType = userType;
+                break;
+
+            case 18:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+                userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
+                userType.CollectionAdd = VectorAdd_18_BehaviorCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 19:   //  Windows.UI.Xaml.DependencyObjectCollection
+                xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 20:   //  Windows.UI.Xaml.DependencyObject
+                xamlType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 21:   //  LearningUWP.Behaviors.AutoScrolToSelectedItem_B
+                userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_21_AutoScrolToSelectedItem_B;
+                userType.AddMemberName("AssociatedObject");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 22:   //  LearningUWP.MainPage
                 userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_17_MainPage;
+                userType.Activator = Activate_22_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -522,6 +569,19 @@ namespace LearningUWP.Prototype_XamlTypeInfo
             var that = (global::LearningUWP.Models.MainPageModel)instance;
             that.LiveTileEnabled = (global::System.Boolean)Value;
         }
+        private object get_14_Interaction_Behaviors(object instance)
+        {
+            return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_14_Interaction_Behaviors(object instance, object Value)
+        {
+            global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
+        }
+        private object get_15_AutoScrolToSelectedItem_B_AssociatedObject(object instance)
+        {
+            var that = (global::LearningUWP.Behaviors.AutoScrolToSelectedItem_B)instance;
+            return that.AssociatedObject;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -613,6 +673,20 @@ namespace LearningUWP.Prototype_XamlTypeInfo
                 xamlMember = new global::LearningUWP.Prototype_XamlTypeInfo.XamlMember(this, "LiveTileEnabled", "Boolean");
                 xamlMember.Getter = get_13_MainPageModel_LiveTileEnabled;
                 xamlMember.Setter = set_13_MainPageModel_LiveTileEnabled;
+                break;
+            case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
+                userType = (global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
+                xamlMember = new global::LearningUWP.Prototype_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
+                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
+                xamlMember.SetIsAttachable();
+                xamlMember.Getter = get_14_Interaction_Behaviors;
+                xamlMember.Setter = set_14_Interaction_Behaviors;
+                break;
+            case "LearningUWP.Behaviors.AutoScrolToSelectedItem_B.AssociatedObject":
+                userType = (global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LearningUWP.Behaviors.AutoScrolToSelectedItem_B");
+                xamlMember = new global::LearningUWP.Prototype_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
+                xamlMember.Getter = get_15_AutoScrolToSelectedItem_B_AssociatedObject;
+                xamlMember.SetIsReadOnly();
                 break;
             }
             return xamlMember;

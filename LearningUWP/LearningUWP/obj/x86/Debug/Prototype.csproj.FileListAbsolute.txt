@@ -206,3 +206,7 @@ C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x
 C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\Repository.pdb
 C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\Repository.pri
 C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\Prototype.csproj.GenerateResource.Cache
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\Microsoft.Xaml.Interactions.dll
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\Microsoft.Xaml.Interactivity.dll
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\Microsoft.Xaml.Interactions.pri.xml
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml

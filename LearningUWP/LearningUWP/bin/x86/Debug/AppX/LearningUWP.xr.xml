@@ -109,6 +109,10 @@
       <RootProperty Name="SelectedItem" />
       <RootProperty Name="SelectedIndex" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
+      <RootMethod Name="GetBehaviors" />
+      <RootMethod Name="SetBehaviors" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="Text" />
@@ -116,6 +120,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="FontSize" />
     </RootType>
+    <RootType FullName="LearningUWP.Behaviors.AutoScrolToSelectedItem_B" />
     <RootType FullName="LearningUWP.MainPage" />
   </Roots.RootTypes>
 </Roots>
