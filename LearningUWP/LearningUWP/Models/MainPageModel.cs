@@ -13,6 +13,14 @@ namespace LearningUWP.Models
 {
     public class MainPageModel: INotifyPropertyChanged
     {
+
+        public enum LoadingStates
+        {
+            Loading,
+            Loaded,
+            Error
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public List<Company> Companies { get; set; }
@@ -26,8 +34,17 @@ namespace LearningUWP.Models
 
         private async void GetAllData()
         {
-            Companies = await Queries.GetCompaniesAsync();
-            PerformCompanyFiltering();
+            try
+            {
+                Companies = await Queries.GetCompaniesAsync();
+                //throw new Exception();
+                PerformCompanyFiltering();
+                LoadingState = LoadingStates.Loaded;
+            }
+            catch (Exception ex)
+            {
+                LoadingState = LoadingStates.Error;
+            }
         }
 
         public ObservableCollection<Company> FilteredCompanies { get; set; } = new ObservableCollection<Company>();      
@@ -56,6 +73,17 @@ namespace LearningUWP.Models
                 SelectedCompany = FilteredCompanies[FilteredCompanies.Count - 2];
             }
             catch { }
+        }
+
+        private LoadingStates _loadingState = LoadingStates.Loading;
+        public LoadingStates LoadingState
+        {
+            get { return _loadingState; }
+            set
+            {
+                _loadingState = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LoadingState)));
+            }
         }
 
         private string _FilterCriteria;

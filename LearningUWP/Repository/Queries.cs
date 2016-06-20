@@ -20,7 +20,7 @@ namespace Repository
             if (_allCompanies != null)
                 return _allCompanies;
 
-            await Task.Delay(1000);
+            await Task.Delay(4000);
             _allCompanies = new List<Company>();
             foreach (var company in Companies)
             {

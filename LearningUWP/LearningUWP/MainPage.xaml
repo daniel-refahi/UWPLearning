@@ -7,7 +7,7 @@
     xmlns:Models="using:LearningUWP.Models"
     xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Behaviors="using:LearningUWP.Behaviors"
     x:Class="LearningUWP.MainPage"
-    mc:Ignorable="d" RequestedTheme="Dark">
+    mc:Ignorable="d" RequestedTheme="Dark" Background="#FFCCCCCC" NavigationCacheMode="Enabled">
     <Page.Resources>
         <DataTemplate x:Key="CompanyTemplate">
             <Grid Height="60" Margin="10" >
@@ -42,7 +42,10 @@
         </DataTemplate>
     </Page.Resources>
     <Page.BottomAppBar>
-        <CommandBar >
+        <CommandBar RenderTransformOrigin="0.5,0.5" x:Name="commandBar" >
+            <CommandBar.RenderTransform>
+                <CompositeTransform/>
+            </CommandBar.RenderTransform>
             <CommandBar.SecondaryCommands>
                 <AppBarToggleButton x:Name="LiveTileToggleBt" Label="Live Tile" IsChecked="{Binding LiveTileEnabled, Mode=TwoWay}"/>
             </CommandBar.SecondaryCommands>
@@ -54,7 +57,175 @@
         <Models:MainPageModel/>
     </Page.DataContext>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Name="__MainGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="LoadingState">
+                <VisualState x:Name="Loading">
+                    <VisualState.Setters>
+                        <Setter Target="grid.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
+                        <Setter Target="grid.(FrameworkElement.VerticalAlignment)" Value="Stretch"/>
+                        <Setter Target="grid.(FrameworkElement.Width)" Value="NaN"/>
+                        <Setter Target="grid.(FrameworkElement.Height)" Value="NaN"/>
+                        <Setter Target="grid.(Panel.Background)">
+                            <Setter.Value>
+                                <SolidColorBrush Color="#CCFFFFFF"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="grid.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="stackPanel.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stackPanel.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="textBlock.(TextBlock.Text)" Value="Loading"/>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="48"/>
+                        <Setter Target="stackPanel.(FrameworkElement.Width)" Value="NaN"/>
+                        <Setter Target="stackPanel.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
+                        <Setter Target="textBlock.(FrameworkElement.VerticalAlignment)" Value="Stretch"/>
+                        <Setter Target="stackPanel.(FrameworkElement.Height)" Value="NaN"/>
+                        <Setter Target="progressBar.(ProgressBar.IsIndeterminate)" Value="True"/>
+                        <Setter Target="progressBar.(RangeBase.Value)" Value="0"/>
+                        <Setter Target="progressBar.(Control.HorizontalContentAlignment)" Value="Stretch"/>
+                        <Setter Target="progressBar.(FrameworkElement.VerticalAlignment)" Value="Stretch"/>
+                        <Setter Target="progressBar.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
+                        <Setter Target="progressBar.(FrameworkElement.Width)" Value="NaN"/>
+                        <Setter Target="progressBar.(FrameworkElement.Height)" Value="10"/>
+                        <Setter Target="progressBar.(RangeBase.Maximum)" Value="100"/>
+                        <Setter Target="progressBar.(RangeBase.Minimum)" Value="0"/>
+                        <Setter Target="commandBar.(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Value="48"/>
+                    </VisualState.Setters>
+                    <Storyboard>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid" d:IsOptimized="True"/>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel" d:IsOptimized="True"/>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock" d:IsOptimized="True"/>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="progressBar" d:IsOptimized="True"/>
+                        <ColorAnimation Duration="0" To="#FF080808" Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="progressBar" d:IsOptimized="True"/>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Loaded">
+                    <VisualState.Setters>
+                        <Setter Target="grid.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
+                        <Setter Target="grid.(FrameworkElement.VerticalAlignment)" Value="Stretch"/>
+                        <Setter Target="grid.(FrameworkElement.Width)" Value="NaN"/>
+                        <Setter Target="grid.(FrameworkElement.Height)" Value="NaN"/>
+                        <Setter Target="grid.(Panel.Background)">
+                            <Setter.Value>
+                                <SolidColorBrush Color="#CCFFFFFF"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="grid.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="stackPanel.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stackPanel.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="textBlock.(TextBlock.Text)" Value="Loading"/>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="48"/>
+                        <Setter Target="stackPanel.(FrameworkElement.Width)" Value="NaN"/>
+                        <Setter Target="stackPanel.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
+                        <Setter Target="textBlock.(FrameworkElement.VerticalAlignment)" Value="Stretch"/>
+                        <Setter Target="stackPanel.(FrameworkElement.Height)" Value="NaN"/>
+                        <Setter Target="progressBar.(ProgressBar.IsIndeterminate)" Value="False"/>
+                        <Setter Target="progressBar.(RangeBase.Value)" Value="0"/>
+                        <Setter Target="progressBar.(Control.HorizontalContentAlignment)" Value="Stretch"/>
+                        <Setter Target="progressBar.(FrameworkElement.VerticalAlignment)" Value="Stretch"/>
+                        <Setter Target="progressBar.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
+                        <Setter Target="progressBar.(FrameworkElement.Width)" Value="NaN"/>
+                        <Setter Target="progressBar.(FrameworkElement.Height)" Value="10"/>
+                        <Setter Target="progressBar.(RangeBase.Maximum)" Value="100"/>
+                        <Setter Target="progressBar.(RangeBase.Minimum)" Value="0"/>
+                    </VisualState.Setters>
+                    <Storyboard>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid">
+                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                            <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0"/>
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel" d:IsOptimized="True"/>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock" d:IsOptimized="True"/>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="progressBar" d:IsOptimized="True"/>
+                        <ColorAnimation Duration="0" To="#FF080808" Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="progressBar" d:IsOptimized="True"/>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="commandBar">
+                            <EasingDoubleKeyFrame KeyTime="0" Value="48"/>
+                            <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0"/>
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="textBlock">
+                            <EasingDoubleKeyFrame KeyTime="0" Value="0">
+                                <EasingDoubleKeyFrame.EasingFunction>
+                                    <BackEase EasingMode="EaseIn" Amplitude="0.2"/>
+                                </EasingDoubleKeyFrame.EasingFunction>
+                            </EasingDoubleKeyFrame>
+                            <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-2000">
+                                <EasingDoubleKeyFrame.EasingFunction>
+                                    <BackEase EasingMode="EaseIn" Amplitude="0.2"/>
+                                </EasingDoubleKeyFrame.EasingFunction>
+                            </EasingDoubleKeyFrame>
+                        </DoubleAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Visible</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                            <DiscreteObjectKeyFrame KeyTime="0:0:0.8">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Error">
+                    <VisualState.Setters>
+                        <Setter Target="grid.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
+                        <Setter Target="grid.(FrameworkElement.VerticalAlignment)" Value="Stretch"/>
+                        <Setter Target="grid.(FrameworkElement.Width)" Value="NaN"/>
+                        <Setter Target="grid.(FrameworkElement.Height)" Value="NaN"/>
+                        <Setter Target="grid.(Panel.Background)">
+                            <Setter.Value>
+                                <SolidColorBrush Color="#CCFFFFFF"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="grid.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="stackPanel.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stackPanel.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="textBlock.(TextBlock.Text)" Value="Can't load data"/>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="48"/>
+                        <Setter Target="stackPanel.(FrameworkElement.Width)" Value="NaN"/>
+                        <Setter Target="stackPanel.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
+                        <Setter Target="textBlock.(FrameworkElement.VerticalAlignment)" Value="Stretch"/>
+                        <Setter Target="stackPanel.(FrameworkElement.Height)" Value="NaN"/>
+                        <Setter Target="progressBar.(ProgressBar.IsIndeterminate)" Value="True"/>
+                        <Setter Target="progressBar.(RangeBase.Value)" Value="0"/>
+                        <Setter Target="progressBar.(Control.HorizontalContentAlignment)" Value="Stretch"/>
+                        <Setter Target="progressBar.(FrameworkElement.VerticalAlignment)" Value="Stretch"/>
+                        <Setter Target="progressBar.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
+                        <Setter Target="progressBar.(FrameworkElement.Width)" Value="NaN"/>
+                        <Setter Target="progressBar.(FrameworkElement.Height)" Value="10"/>
+                        <Setter Target="progressBar.(RangeBase.Maximum)" Value="100"/>
+                        <Setter Target="progressBar.(RangeBase.Minimum)" Value="0"/>
+                        <Setter Target="commandBar.(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Value="48"/>
+                        <Setter Target="progressBar.(UIElement.Visibility)" Value="Collapsed"/>
+                    </VisualState.Setters>
+                    <Storyboard>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid" d:IsOptimized="True"/>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel" d:IsOptimized="True"/>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock" d:IsOptimized="True"/>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="progressBar" d:IsOptimized="True"/>
+                        <ColorAnimation Duration="0" To="#FF080808" Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="progressBar" d:IsOptimized="True"/>
+                        <ColorAnimation Duration="0" To="#FFC70000" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="textBlock" d:IsOptimized="True"/>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
             <ColumnDefinition/>
@@ -81,8 +252,24 @@
             <TextBlock Padding="3,3,3,3" Margin="10,10,0,10" HorizontalAlignment="Left" d:LayoutOverrides="TopPosition, BottomPosition" 
 				FontSize="24" Text="{Binding EmployeeListTitle}"/>
             <ScrollViewer Grid.Row="1">
-                <ItemsControl ItemTemplate="{StaticResource EmployeeTemple}" ItemsSource="{Binding Employees}"/>
+                <ItemsControl ItemTemplate="{StaticResource EmployeeTemple}" ItemsSource="{Binding Employees}">
+                    <ItemsControl.ItemContainerTransitions>
+                        <TransitionCollection>
+                            <EntranceThemeTransition FromVerticalOffset="0" FromHorizontalOffset="38" IsStaggeringEnabled="True"/>
+                        </TransitionCollection>
+                    </ItemsControl.ItemContainerTransitions>
+                </ItemsControl>
             </ScrollViewer>
+        </Grid>
+        <Grid x:Name="grid" HorizontalAlignment="Left" Height="100" Opacity="0" VerticalAlignment="Top" Width="100">
+            <StackPanel x:Name="stackPanel" HorizontalAlignment="Left" Height="100" Opacity="0" VerticalAlignment="Top" Width="100" d:LayoutOverrides="LeftPosition, RightPosition">
+                <TextBlock x:Name="textBlock" Opacity="0" TextWrapping="Wrap" Text="textBlock" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <CompositeTransform/>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <ProgressBar x:Name="progressBar" Height="10" Opacity="0" VerticalAlignment="Stretch" Width="100"/>
+            </StackPanel>
         </Grid>
 
     </Grid>

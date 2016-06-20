@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-06-02T02:56:40.806</Modified>
+      <Modified>2016-06-16T01:16:52.784</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\LearningUWP.exe">
       <PackagePath>entrypoint\LearningUWP.exe</PackagePath>
-      <Modified>2016-06-02T02:56:38.698</Modified>
+      <Modified>2016-06-16T01:16:51.575</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DanielRefahi\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -464,11 +464,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\Repository\bin\x86\Debug\Repository.dll">
       <PackagePath>Repository.dll</PackagePath>
-      <Modified>2016-05-19T06:00:49.882</Modified>
+      <Modified>2016-06-13T06:41:56.373</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\BackgroundServices\bin\x86\Debug\BackgroundServices.winmd">
       <PackagePath>BackgroundServices.winmd</PackagePath>
-      <Modified>2016-05-19T06:16:54.976</Modified>
+      <Modified>2016-06-13T06:41:58.131</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
@@ -514,7 +514,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\LearningUWP.xr.xml">
       <PackagePath>LearningUWP.xr.xml</PackagePath>
-      <Modified>2016-06-02T02:56:38.432</Modified>
+      <Modified>2016-06-16T01:16:51.375</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -522,11 +522,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-06-02T02:56:40.291</Modified>
+      <Modified>2016-06-16T01:16:52.418</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\Core\LearningUWP.exe">
       <PackagePath>LearningUWP.exe</PackagePath>
-      <Modified>2016-06-02T02:56:40.801</Modified>
+      <Modified>2016-06-16T01:16:52.780</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
