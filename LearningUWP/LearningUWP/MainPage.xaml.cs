@@ -50,5 +50,10 @@ namespace LearningUWP
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
             base.OnNavigatedTo(e);
         }
+
+        private void uiPracticePageBt_Click(object sender, RoutedEventArgs e)
+        {
+            splitView.IsPaneOpen = true;
+        }
     }
 }

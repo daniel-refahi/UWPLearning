@@ -49,8 +49,11 @@
             <CommandBar.SecondaryCommands>
                 <AppBarToggleButton x:Name="LiveTileToggleBt" Label="Live Tile" IsChecked="{Binding LiveTileEnabled, Mode=TwoWay}"/>
             </CommandBar.SecondaryCommands>
+            <AppBarButton x:Name="__ShowMenuAppBarB" HorizontalAlignment="Stretch" Icon="ShowResults" Label="Go to UI Practice" VerticalAlignment="Stretch" d:LayoutOverrides="Height" Click="uiPracticePageBt_Click"/>
+            <AppBarSeparator d:LayoutOverrides="Width, Height"/>
             <AppBarButton x:Name="aboutPageBt" HorizontalAlignment="Stretch" Icon="Admin" Label="Go to About" VerticalAlignment="Stretch" d:LayoutOverrides="Height" Click="aboutPageBt_Click"/>
             <AppBarButton Icon="Mail" Label="Send email to company" Command="{Binding SendEmailCommand, Mode=OneWay}" />
+            <AppBarButton x:Name="appBarButton" HorizontalAlignment="Stretch" Icon="Accept" Label="appbarbutton" VerticalAlignment="Stretch" d:LayoutOverrides="Height"/>
         </CommandBar>
     </Page.BottomAppBar>
     <Page.DataContext>
@@ -225,42 +228,66 @@
                     </Storyboard>
                 </VisualState>
             </VisualStateGroup>
+            <VisualStateGroup x:Name="ScreenSize">
+                <VisualState x:Name="Small">
+                    <VisualState.Setters>
+                        <Setter Target="splitView.(SplitView.DisplayMode)" Value="Overlay"/>
+                        <Setter Target="splitView.(SplitView.IsPaneOpen)" Value="False"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Normall">
+                    <VisualState.Setters>
+                        <Setter Target="__ShowMenuAppBarB.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="splitView.(SplitView.IsPaneOpen)" Value="True"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="100"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <ListView x:Name="listView" ItemTemplate="{StaticResource CompanyTemplate}" 
-				ItemsSource="{Binding FilteredCompanies}" Grid.Row="1" 
-				SelectedItem="{Binding SelectedCompany, Mode=TwoWay}" SelectedIndex="-1">
-                <Interactivity:Interaction.Behaviors>
-                    <Behaviors:AutoScrolToSelectedItem_B/>
-                </Interactivity:Interaction.Behaviors>
-            </ListView>
-            <TextBox x:Name="textBox" TextWrapping="Wrap" Text="{Binding FilterCriteria, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Search for Company" Margin="20,32" FontSize="16"/>
-        </Grid>
-        <Grid Grid.Column="1" RequestedTheme="Dark">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <TextBlock Padding="3,3,3,3" Margin="10,10,0,10" HorizontalAlignment="Left" d:LayoutOverrides="TopPosition, BottomPosition" 
-				FontSize="24" Text="{Binding EmployeeListTitle}"/>
-            <ScrollViewer Grid.Row="1">
-                <ItemsControl ItemTemplate="{StaticResource EmployeeTemple}" ItemsSource="{Binding Employees}">
-                    <ItemsControl.ItemContainerTransitions>
-                        <TransitionCollection>
-                            <EntranceThemeTransition FromVerticalOffset="0" FromHorizontalOffset="38" IsStaggeringEnabled="True"/>
-                        </TransitionCollection>
-                    </ItemsControl.ItemContainerTransitions>
-                </ItemsControl>
-            </ScrollViewer>
-        </Grid>
+        <SplitView x:Name="splitView" Grid.ColumnSpan="2" IsPaneOpen="True" DisplayMode="Inline">
+            <SplitView.Pane>
+                <Grid HorizontalAlignment="Left" Height="720" Margin="0" Width="300">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ListView x:Name="listView" ItemTemplate="{StaticResource CompanyTemplate}" 
+                		ItemsSource="{Binding FilteredCompanies}" Grid.Row="1" 
+                		SelectedItem="{Binding SelectedCompany, Mode=TwoWay}" SelectedIndex="-1">
+                        <Interactivity:Interaction.Behaviors>
+                            <Behaviors:AutoScrolToSelectedItem_B/>
+                        </Interactivity:Interaction.Behaviors>
+                    </ListView>
+                    <TextBox x:Name="textBox" TextWrapping="Wrap" Text="{Binding FilterCriteria, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Search for Company" Margin="20,32" FontSize="16"/>
+                </Grid>
+            </SplitView.Pane>
+            <Grid RequestedTheme="Dark" Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Padding="3,3,3,3" Margin="10,10,0,10" HorizontalAlignment="Left" d:LayoutOverrides="TopPosition, BottomPosition" 
+        			FontSize="24" Text="{Binding EmployeeListTitle}"/>
+                <ScrollViewer Grid.Row="1">
+                    <ItemsControl ItemTemplate="{StaticResource EmployeeTemple}" ItemsSource="{Binding Employees}">
+                        <ItemsControl.ItemContainerTransitions>
+                            <TransitionCollection>
+                                <EntranceThemeTransition FromVerticalOffset="0" FromHorizontalOffset="38" IsStaggeringEnabled="True"/>
+                            </TransitionCollection>
+                        </ItemsControl.ItemContainerTransitions>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Grid>
+        </SplitView>
         <Grid x:Name="grid" HorizontalAlignment="Left" Height="100" Opacity="0" VerticalAlignment="Top" Width="100">
             <StackPanel x:Name="stackPanel" HorizontalAlignment="Left" Height="100" Opacity="0" VerticalAlignment="Top" Width="100" d:LayoutOverrides="LeftPosition, RightPosition">
                 <TextBlock x:Name="textBlock" Opacity="0" TextWrapping="Wrap" Text="textBlock" RenderTransformOrigin="0.5,0.5">

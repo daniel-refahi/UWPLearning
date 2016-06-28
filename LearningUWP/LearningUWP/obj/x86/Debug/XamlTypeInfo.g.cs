@@ -132,7 +132,7 @@ namespace LearningUWP.Prototype_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[26];
+            _typeNameTable = new string[27];
             _typeNameTable[0] = "LearningUWP.About";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -159,8 +159,9 @@ namespace LearningUWP.Prototype_XamlTypeInfo
             _typeNameTable[23] = "Windows.UI.Xaml.DependencyObject";
             _typeNameTable[24] = "LearningUWP.Behaviors.AutoScrolToSelectedItem_B";
             _typeNameTable[25] = "LearningUWP.MainPage";
+            _typeNameTable[26] = "LearningUWP.PracticeUI";
 
-            _typeTable = new global::System.Type[26];
+            _typeTable = new global::System.Type[27];
             _typeTable[0] = typeof(global::LearningUWP.About);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -187,6 +188,7 @@ namespace LearningUWP.Prototype_XamlTypeInfo
             _typeTable[23] = typeof(global::Windows.UI.Xaml.DependencyObject);
             _typeTable[24] = typeof(global::LearningUWP.Behaviors.AutoScrolToSelectedItem_B);
             _typeTable[25] = typeof(global::LearningUWP.MainPage);
+            _typeTable[26] = typeof(global::LearningUWP.PracticeUI);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -234,6 +236,7 @@ namespace LearningUWP.Prototype_XamlTypeInfo
         private object Activate_21_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
         private object Activate_24_AutoScrolToSelectedItem_B() { return new global::LearningUWP.Behaviors.AutoScrolToSelectedItem_B(); }
         private object Activate_25_MainPage() { return new global::LearningUWP.MainPage(); }
+        private object Activate_26_PracticeUI() { return new global::LearningUWP.PracticeUI(); }
         private void VectorAdd_5_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Repository.Company>)instance;
@@ -452,6 +455,13 @@ namespace LearningUWP.Prototype_XamlTypeInfo
             case 25:   //  LearningUWP.MainPage
                 userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_25_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 26:   //  LearningUWP.PracticeUI
+                userType = new global::LearningUWP.Prototype_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_26_PracticeUI;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="LearningUWP.PracticeUI"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LearningUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='1' x:Name="ScreenSize">
+                <VisualState x:ConnectionId='2' x:Name="Small">
+                    <VisualState.Setters>
+                        <Setter Target="blue.(FrameworkElement.Height)" Value="200"/>
+                        <Setter Target="red.(RelativePanel.RightOf)" Value=""/>
+                        <Setter Target="red.(RelativePanel.Below)" Value="blue"/>
+                        <Setter Target="red.(FrameworkElement.Height)" Value="200"/>
+                        <Setter Target="red.(FrameworkElement.Width)" Value="200"/>
+                        <Setter Target="yellow.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="yellow.(FrameworkElement.Height)" Value="200"/>
+                        <Setter Target="yellow.(RelativePanel.RightOf)" Value="blue"/>
+                        <Setter Target="blue.(FrameworkElement.Width)" Value="200"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:ConnectionId='3' x:Name="Normal">
+                    <VisualState.Setters>
+                        <Setter Target="blue.(FrameworkElement.Height)" Value="600"/>
+                        <Setter Target="red.(RelativePanel.RightOf)" Value="blue"/>
+                        <Setter Target="red.(RelativePanel.Below)" Value=""/>
+                        <Setter Target="red.(FrameworkElement.Height)" Value="600"/>
+                        <Setter Target="red.(FrameworkElement.Width)" Value="300"/>
+                        <Setter Target="yellow.(FrameworkElement.Width)" Value="300"/>
+                        <Setter Target="yellow.(FrameworkElement.Height)" Value="200"/>
+                        <Setter Target="yellow.(RelativePanel.RightOf)" Value="red"/>
+                        <Setter Target="blue.(FrameworkElement.Width)" Value="300"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="700"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Rectangle x:ConnectionId='4' x:Name="blue" Fill="#FF2323D6" Stroke="Black" />
+        <Rectangle x:ConnectionId='5' x:Name="red" Fill="#FFD6235C" Stroke="Black" />
+        <Rectangle x:ConnectionId='6' x:Name="yellow" Fill="#FFC6D623" Stroke="Black"/>
+
+    </RelativePanel>
+</Page>
+

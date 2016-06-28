@@ -210,3 +210,8 @@ C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x
 C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\Microsoft.Xaml.Interactivity.dll
 C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\Microsoft.Xaml.Interactions.pri.xml
 C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\bin\x86\Debug\PracticeUI.xbf
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\PracticeUI.g.i.cs
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\PracticeUI.g.cs
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\PracticeUI.xaml
+C:\Users\DanielRefahi\Documents\GitHub\UWPLearning\LearningUWP\LearningUWP\obj\x86\Debug\PracticeUI.xbf

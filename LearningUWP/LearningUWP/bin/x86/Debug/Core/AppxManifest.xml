@@ -51,7 +51,7 @@
   <build:Metadata>
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />
     <build:Item Name="VisualStudio" Version="14.0" />
-    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2015" />
+    <build:Item Name="VisualStudioEdition" Value="Microsoft Blend for Visual Studio Community 2015" />
     <build:Item Name="OperatingSystem" Version="10.0.10586.0 (th2_release.151029-1700)" />
     <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.25123.0" />
     <build:Item Name="ProjectGUID" Value="{BAE3AC40-FC89-4741-AB78-307A481C087E}" />
